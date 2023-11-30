@@ -49,10 +49,7 @@ def sum(req: func.HttpRequest) -> func.HttpResponse:
         sum_a_b = int(a) + int(b)
         return func.HttpResponse(f"The sum of {a} and {b} is {sum_a_b}")
     else:
-        return func.HttpResponse(
-             'Please provide two Integers as query parameters for "a" and "b"',
-             status_code=200
-        )
+        return func.HttpResponse('Please provide two Integers as query parameters for "a" and "b"', status_code=200)
 
     
 

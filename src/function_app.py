@@ -32,6 +32,7 @@ def http_trigger(req: func.HttpRequest) -> func.HttpResponse:
 
 @app.route(route="sum")
 def sum(req: func.HttpRequest) -> func.HttpResponse:
+
     a = req.params.get('a')
     b = req.params.get('b')
 
@@ -43,14 +44,14 @@ def sum(req: func.HttpRequest) -> func.HttpResponse:
             f'The values of "a" and "b" are not Integers :(', 
             status_code=400
         )
-    
+
     if a and b:
         sum_a_b = int(a) + int(b)
         return func.HttpResponse(f"The sum of {a} and {b} is {sum_a_b}")
     else:
         return func.HttpResponse(
-            Please provide two Integers as query parameters for "a" and "b"',
-            status_code=200
+             'Please provide two Integers as query parameters for "a" and "b"',
+             status_code=200
         )
 
     
